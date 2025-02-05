@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https:://bvrinsane.ai.chat.bot</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">Andhra-Wala chat bot [made by bvrahul]</div>
+            <div class="tools">
+                <button class="tool-btn" onclick="toggleTheme()">Toggle Theme</button>
+                <button class="tool-btn" onclick="clearChat()">Clear Chat</button>
+                <button class="tool-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <select id="modelSelect" class="model-select">
+                    <option value="llama-3.3-70b-versatile">llama-3.3-70b-versatile</option>
+                    <option value="llama-3.1-8b-instant">llama-3.1-8b-instant</option>
+                </select>
+
+                <div class="mode-buttons">
+                    <button class="mode-btn active" onclick="setMode('chat')">Chat Mode</button>
+                    <button class="mode-btn" onclick="setMode('code')">Code Mode</button>
+                </div>
+
+                <div id="suggestions" class="suggestions"></div>
+            </aside>
+
+            <!-- Main Chat -->
+            <main class="main-chat">
+                <div id="chatbox" class="chatbox"></div>
+                
+                <div class="input-area">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Type your message... (Ctrl + Enter to send)" 
+                        rows="1"
+                    ></textarea>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="uploadFile()" title="Upload File">
+                            📁
+                        </button>
+                        <button class="action-btn primary" onclick="handleSendMessage()" title="Send">
+                            ➤
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
